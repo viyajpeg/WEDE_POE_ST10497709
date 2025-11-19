@@ -65,11 +65,14 @@ Component Refinement:
 Updated input fields across all forms with improved focus styles (focus:ring-2) and standardized padding for better visual clarity.
 
 
-References
-Tailwind CSS: Used for utility-first styling and responsive breakpoints.
-Google Fonts: Used for typography (Marhey, Lexend).
-Placehold.co: Used for all placeholder images throughout the site.
-GeminiAI: Used to clean up code format and improve code as well as assist with compling my changelog
 
+Reference List
+GeminiAI (n.d.). GeminiAI. [Unpublished computer program].
+
+Google Fonts (n.d.). Google Fonts. Available at: https://fonts.google.com/ [Accessed: 19 November 2025].
+
+Placehold.co (n.d.). Placehold.co. Available at: https://placehold.co/ [Accessed: 19 November 2025].
+
+Tailwind CSS (n.d.). Tailwind CSS. Available at: https://tailwindcss.com/ [Accessed: 19 November 2025].
 
 
