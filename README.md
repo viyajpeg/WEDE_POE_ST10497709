@@ -64,15 +64,14 @@ Component Refinement:
 
 Updated input fields across all forms with improved focus styles (focus:ring-2) and standardized padding for better visual clarity.
 
-
+_____________________________________________________________________________________________________________________________________
 
 Reference List
+
+Desifyza (n.d.). Profile. [Instagram]. Available at: https://www.instagram.com/desifyza/ [Accessed: 19 November 2025].
+
 GeminiAI (n.d.). GeminiAI. [Unpublished computer program].
 
 Google Fonts (n.d.). Google Fonts. Available at: https://fonts.google.com/ [Accessed: 19 November 2025].
 
-Placehold.co (n.d.). Placehold.co. Available at: https://placehold.co/ [Accessed: 19 November 2025].
-
 Tailwind CSS (n.d.). Tailwind CSS. Available at: https://tailwindcss.com/ [Accessed: 19 November 2025].
-
-
