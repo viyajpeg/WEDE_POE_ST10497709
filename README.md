@@ -23,10 +23,6 @@ Google Fonts	Marhey (Headings) and Lexend (Body Text).
 October 2, 2025
 Refactor: CSS Separation:
 
-I have taken all of the feedback provided from Part 1, 2 and 3 to resubmit a final copy of my website for DESIFY ZA. 
-
-
-
 Removed all inline CSS and the <style> block from the HTML.
 
 All styling is now managed by a mandatory external stylesheet (style.css), linked across all pages.
@@ -47,7 +43,7 @@ Comprehensive use of Tailwind utility classes was verified for all layout, typog
 
 Pseudo-classes (like hover:, transition:) were consistently applied to enhance user interaction.
 
-October 3, 2025 (Latest Updates)
+October 3, 2025 
 Form Functionality & UX Enhancement (classes.html):
 
 Implemented a structure for external form submission (e.g., Formspree/Netlify) on the "Book Your Spot" form, replacing the placeholder action.
@@ -67,6 +63,17 @@ A resetForm() function to clear inputs and restore the form state after submissi
 Component Refinement:
 
 Updated input fields across all forms with improved focus styles (focus:ring-2) and standardized padding for better visual clarity.
+
+December 12, 2025 (Latest Updates)
+
+Included a wireframe and complete proposal as per the feedback received in Part 1. 
+
+I have used Co-pilot AI to help fix my code format and improve structure as well as comments.
+
+**I have taken all of the feedback provided from Part 1, 2 and 3 to resubmit a final copy of my website for DESIFY ZA. 
+"WEDE_POE_ST10497709_Submission 2" is where you can find my final submission for the deferred POE submission. 
+I let my previous HTML files remain for track and trace purposes. **
+
 
 _____________________________________________________________________________________________________________________________________
 
