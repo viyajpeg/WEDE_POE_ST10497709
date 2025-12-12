@@ -23,6 +23,10 @@ Google Fonts	Marhey (Headings) and Lexend (Body Text).
 October 2, 2025
 Refactor: CSS Separation:
 
+I have taken all of the feedback provided from Part 1, 2 and 3 to resubmit a final copy of my website for DESIFY ZA. 
+
+
+
 Removed all inline CSS and the <style> block from the HTML.
 
 All styling is now managed by a mandatory external stylesheet (style.css), linked across all pages.
