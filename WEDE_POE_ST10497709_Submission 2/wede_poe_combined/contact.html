@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Desify ZA | Request Catering Quote in Cape Town</title>
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <link rel="stylesheet" href="style.css"> 
+    <script src="Assets/js/search.js"></script>
+
+    <meta name="keywords" content="Contact Durban Indian Catering Cape Town, Book Indian Caterer Cape Town, Catering Inquiry Form, Durban Indian Cooking Class Booking, Get Quote Catering Cape Town, Desify ZA phone number, Indian Food Catering Contact">
+    <meta name="description" content="Get a quick quote from Desify ZA for Durban-Indian catering in Cape Town. Use our inquiry form to request menus, pricing, availability or book a cooking class—fast responses for events large and small.">
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <header class="bg-[#C62828] text-white py-6 shadow-lg rounded-b-3xl sticky top-0 z-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                <h1 class="text-3xl font-marhey">Desify ZA</h1>
+                <nav>
+                    <ul class="flex flex-wrap justify-center space-x-6">
+                        <li><a href="index.html" class="hover:text-[#FFD700] transition-colors">Home</a></li>
+                        <li><a href="menus.html" class="hover:text-[#FFD700] transition-colors">Menus</a></li>
+                        <li><a href="classes.html" class="hover:text-[#FFD700] transition-colors">Classes</a></li>
+                        <li><a href="Gallery.html" class="hover:text-[#FFD700] transition-colors">Gallery</a></li>
+                        <li><a href="clients.html" class="hover:text-[#FFD700] transition-colors">Testimony</a></li>
+                        <li><a href="contact.html" class="text-[#FFD700] font-bold transition-colors">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="relative w-full md:w-80">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Search menus, classes, services..." 
+                    class="w-full px-4 py-3 rounded-full bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FFD700] transition-all"
+                    autocomplete="off"
+                >
+                <span class="absolute right-4 top-3.5 text-gray-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </header>
+    <div id="search-overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40" onclick="document.getElementById('close-search').click()"></div>
+    <div id="search-modal" class="hidden fixed top-24 left-1/2 transform -translate-x-1/2 w-11/12 md:w-2/3 lg:w-1/2 bg-white rounded-2xl shadow-2xl z-50 max-h-96 overflow-y-auto">
+        <div class="sticky top-0 bg-white border-b flex justify-between items-center p-4 rounded-t-2xl">
+            <h3 class="font-semibold text-gray-800">Search Results</h3>
+            <button id="close-search" class="text-gray-500 hover:text-gray-700 transition"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+        </div>
+        <div id="search-results"></div>
+    </div>
+
+    <main class="container mx-auto px-6 py-12 flex-grow">
+        <section id="contact" class="mb-16">
+            <h2 class="text-4xl font-marhey text-center text-[#C62828] mb-2">Get a Quote</h2>
+            <p class="text-center text-gray-600 mb-10">Fill in the details below and we'll get back to you within 24 hours.</p>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-3xl p-8 shadow-xl border-t-4 border-[#C62828]">
+                        
+                        <div id="success-message" class="hidden text-center py-10">
+                            <div class="text-6xl text-green-500 mb-4">
+                                <span>&#10004;</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Inquiry Sent!</h3>
+                            <p class="text-gray-600">Thank you for contacting Desify ZA. We have received your details and will be in touch shortly.</p>
+                            <button onclick="resetForm()" class="mt-6 bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-300 transition">Send Another</button>
+                        </div>
+
+                        <form id="inquiry-form" novalidate>
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Event Details</h3>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-4">
+                                <div>
+                                    <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-1">Full Name <span class="text-red-500">*</span></label>
+                                    <input type="text" id="contact-name" name="name" placeholder="e.g. John Doe" required class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#C62828] transition-colors">
+                                    <span class="hidden text-sm text-red-500 mt-1" id="error-name">Please enter your name.</span>
+                                </div>
+                                
+                                <div>
+                                    <label for="contact-phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number <span class="text-red-500">*</span></label>
+                                    <input type="tel" id="contact-phone" name="phone" inputmode="tel" placeholder="e.g. 082 123 4567" required class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#C62828] transition-colors">
+                                    <span class="hidden text-sm text-red-500 mt-1" id="error-phone">Please enter a valid SA phone number.</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="contact-email" class="block text-sm font-medium text-gray-700 mb-1">Email Address <span class="text-red-500">*</span></label>
+                                <input type="email" id="contact-email" name="email" placeholder="e.g. name@example.com" required class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#C62828] transition-colors">
+                                <span class="hidden text-sm text-red-500 mt-1" id="error-email">Please enter a valid email address.</span>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6 mb-4">
+                                <div>
+                                    <label for="event-date" class="block text-sm font-medium text-gray-700 mb-1">Event Date <span class="text-red-500">*</span></label>
+                                    <input type="date" id="event-date" name="date" required class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#C62828] transition-colors text-gray-600">
+                                    <span class="hidden text-sm text-red-500 mt-1" id="error-date">Please select a future date.</span>
+                                </div>
+                                
+                                <div>
+                                    <label for="guest-count" class="block text-sm font-medium text-gray-700 mb-1">No. of Guests <span class="text-red-500">*</span></label>
+                                    <input type="number" id="guest-count" name="guests" min="10" max="2000" placeholder="Min 10" required class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#C62828] transition-colors">
+                                    <span class="hidden text-sm text-red-500 mt-1" id="error-guests">Please enter number of guests (min 10).</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="event-type" class="block text-sm font-medium text-gray-700 mb-1">Event Type</label>
+                                <select id="event-type" name="type" class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#C62828] transition-colors bg-white">
+                                    <option value="Wedding">Wedding</option>
+                                    <option value="Birthday">Birthday Party</option>
+                                    <option value="Corporate">Corporate Event</option>
+                                    <option value="Private">Private Dinner</option>
+                                    <option value="Cooking Class">Cooking Class Booking</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="contact-message" class="block text-sm font-medium text-gray-700 mb-1">Additional Details / Dietary Requirements</label>
+                                <textarea id="contact-message" name="message" rows="4" placeholder="Tell us about your specific needs..." class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#C62828] transition-colors"></textarea>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="w-full bg-[#C62828] text-white px-6 py-3 rounded-full font-bold text-lg shadow-md hover:bg-[#B71C1C] hover:shadow-lg transform active:scale-95 transition-all flex justify-center items-center gap-2">
+                                <span>Send Inquiry</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 flex flex-col gap-6">
+                    <div class="bg-white rounded-3xl p-8 shadow-xl flex-grow border-t-4 border-[#FFD700]">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Reach Us Directly</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-red-100 p-3 rounded-full text-[#C62828]">
+                                    <span>&#9742;</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">+27 12 345 6789</p>
+                                    <p class="text-sm text-gray-500">Mon-Sat, 8am - 6pm</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="bg-red-100 p-3 rounded-full text-[#C62828]">
+                                    <span>&#9993;</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">info@desify.co.za</p>
+                                    <p class="text-sm text-gray-500">We reply within 24hrs</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="bg-red-100 p-3 rounded-full text-[#C62828]">
+                                    <span>&#128205;</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Location</h4>
+                                    <p class="text-gray-600">123 Milnerton Road</p>
+                                    <p class="text-gray-600">Cape Town, Western Cape</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 bg-gray-200 rounded-2xl h-64 overflow-hidden shadow-inner border border-gray-300">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53002.788792683634!2d18.482462660628393!3d-33.87228377972233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc59550fd5cfeb%3A0x5d3b409e27ded873!2sMilnerton%2C%20Cape%20Town!5e0!3m2!1sen!2sza!4v1763496954148!5m2!1sen!2sza" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#616161] text-white py-6 rounded-t-3xl mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Desify ZA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('inquiry-form');
+            const successMsg = document.getElementById('success-message');
+            const inputs = form.querySelectorAll('input, select, textarea');
+            const dateInput = document.getElementById('event-date');
+
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+
+            const showError = (input, msgElementId, show) => {
+                const msgEl = document.getElementById(msgElementId);
+                if (show) {
+                    input.classList.add('border-red-500', 'bg-red-50');
+                    input.classList.remove('border-green-500', 'bg-green-50', 'border-gray-300');
+                    msgEl.classList.remove('hidden');
+                    input.setAttribute('aria-invalid', 'true');
+                } else {
+                    input.classList.remove('border-red-500', 'bg-red-50');
+                    if(input.value.trim() !== '') {
+                        input.classList.add('border-green-500', 'bg-green-50');
+                        input.classList.remove('border-gray-300');
+                    } else {
+                        input.classList.add('border-gray-300');
+                        input.classList.remove('border-green-500', 'bg-green-50');
+                    }
+                    msgEl.classList.add('hidden');
+                    input.setAttribute('aria-invalid', 'false');
+                }
+            };
+
+            const validateField = (input) => {
+                const value = input.value.trim();
+                let isValid = true;
+
+                if (input.id === 'contact-name') {
+                    isValid = value.length >= 2;
+                    showError(input, 'error-name', !isValid);
+                }
+                if (input.id === 'contact-email') {
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    isValid = emailPattern.test(value);
+                    showError(input, 'error-email', !isValid);
+                }
+                if (input.id === 'contact-phone') {
+                    // Normalize digits and accept local (0xxxxxxxxx) or international (27xxxxxxxxx)
+                    const digits = value.replace(/\D/g, '');
+                    if (digits.length === 10 && digits.startsWith('0')) {
+                        isValid = true;
+                    } else if (digits.length === 11 && digits.startsWith('27')) {
+                        isValid = true;
+                    } else {
+                        isValid = false;
+                    }
+                    showError(input, 'error-phone', !isValid);
+                }
+                if (input.id === 'event-date') {
+                    if (value === '') {
+                        isValid = false;
+                    } else {
+                        const selected = new Date(value);
+                        const minDate = new Date(document.getElementById('event-date').getAttribute('min'));
+                        // compare dates without time
+                        selected.setHours(0,0,0,0);
+                        minDate.setHours(0,0,0,0);
+                        isValid = selected >= minDate;
+                    }
+                    showError(input, 'error-date', !isValid);
+                }
+                if (input.id === 'guest-count') {
+                    const num = parseInt(value, 10);
+                    isValid = !isNaN(num) && num >= 10 && num <= 2000;
+                    showError(input, 'error-guests', !isValid);
+                }
+                return isValid;
+            };
+
+            inputs.forEach(input => {
+                input.addEventListener('blur', () => {
+                    if (input.hasAttribute('required') || input.id === 'guest-count' || input.id === 'event-date') {
+                        validateField(input);
+                    }
+                });
+                input.addEventListener('input', () => {
+                    input.classList.remove('border-red-500', 'bg-red-50');
+                    // try multiple id patterns for error messages
+                    const candidates = ['error-' + input.id, 'error-' + input.id.replace('contact-',''), 'error-' + input.id.split('-')[1]];
+                    for (const id of candidates) {
+                        const el = document.getElementById(id);
+                        if (el) el.classList.add('hidden');
+                    }
+                });
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isFormValid = true;
+
+                if (!validateField(document.getElementById('contact-name'))) isFormValid = false;
+                if (!validateField(document.getElementById('contact-email'))) isFormValid = false;
+                if (!validateField(document.getElementById('contact-phone'))) isFormValid = false;
+                if (!validateField(document.getElementById('event-date'))) isFormValid = false;
+                if (!validateField(document.getElementById('guest-count'))) isFormValid = false;
+
+                if (isFormValid) {
+                    const btn = document.getElementById('submit-btn');
+                    const originalContent = btn.innerHTML;
+                    btn.textContent = 'Sending...';
+                    btn.disabled = true;
+                    btn.classList.add('opacity-75', 'cursor-not-allowed');
+
+                    setTimeout(() => {
+                        form.style.display = 'none';
+                        successMsg.classList.remove('hidden');
+                        successMsg.classList.add('block');
+                        
+                        btn.innerHTML = originalContent;
+                        btn.disabled = false;
+                        btn.classList.remove('opacity-75', 'cursor-not-allowed');
+                        successMsg.scrollIntoView({ behavior: 'smooth' });
+                    }, 1500);
+                }
+            });
+        });
+
+        function resetForm() {
+            const form = document.getElementById('inquiry-form');
+            const successMsg = document.getElementById('success-message');
+            form.reset();
+            form.querySelectorAll('input').forEach(i => {
+                i.classList.remove('border-green-500', 'bg-green-50', 'border-red-500', 'bg-red-50');
+                i.classList.add('border-gray-300');
+            });
+            successMsg.classList.add('hidden');
+            successMsg.classList.remove('block');
+            form.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
